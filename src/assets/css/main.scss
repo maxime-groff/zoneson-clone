@@ -9,3 +9,24 @@ $font-size: 16px;
 
 @import './partials/global';
 @import './partials/header';
+
+/* MAIN */
+#main {
+    height: 100%;
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+}
+
+/* HEADER */
+.title {
+    font-size: 64px;
+    margin-bottom: 0px;
+    font-family: 'Lobster', cursive;
+    color: #428bca;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5); 
+}
+
+.tag {
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;   
+}
