@@ -3,9 +3,14 @@
     <div>
       <!-- Components -->
       <h1>Home page</h1>
-      <router-link to="/tag/sex">
-        Go to Tag Page Sex
-      </router-link>
+      <div 
+        v-for="(quote, index) in quotes" 
+        :key="index"
+      >
+        <router-link :to="'/tag/'+ quote">
+          Go to Tag Page {{ quote }}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +19,9 @@
 export default {
   name: 'Home',
   data() {
-    return {}
+    return {
+      quotes: ['cheveux', 'gentil', 'facteur', 'bordel'],
+    }
   },
 }
 </script>
