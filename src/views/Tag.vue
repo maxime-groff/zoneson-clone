@@ -6,17 +6,22 @@
       <router-link to="/">
         Go to Homepage
       </router-link>
+      <PlaySound file-name="sound.mp3" />
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Home",
-    data() {
-      return {}
-    }
-  };
+import PlaySound from '../components/PlaySound'
+export default {
+  name: 'Home',
+  components: {
+    PlaySound,
+  },
+  data() {
+    return {}
+  },
+}
 </script>
 
 <style>
