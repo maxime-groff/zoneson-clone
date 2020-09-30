@@ -8,7 +8,10 @@
 export default {
   name: "Header",
   props: {
-    msg: String,
+    msg: {
+      type: String, 
+      default: 'yes life'
+    }
   },
 };
 </script>
