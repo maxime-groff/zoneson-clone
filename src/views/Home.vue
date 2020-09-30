@@ -2,15 +2,14 @@
   <div>
     <div>
       <!-- Components -->
-      <h1>Hi</h1>
+      <h1>Hi saloute</h1>
     </div>
-
   </div>
 </template>
 
 <script>
   export default {
-    name: "home",
+    name: "Home",
     data() {
       return {}
     }
