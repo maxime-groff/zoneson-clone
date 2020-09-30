@@ -1,11 +1,14 @@
 <template>
   <div class="playsound">
     <figure>
-    <figcaption>Listen to the Sound:</figcaption>
-    <audio controls>
-      <source :src="'../assets/audio/'+fileName" type="audio/mpeg">
-    </audio>
-</figure>
+      <figcaption>Listen to the Sound:</figcaption>
+      <audio controls>
+        <source 
+          :src="'/audio/' + fileName"
+          type="audio/mpeg"
+        >
+      </audio>
+    </figure>
   </div>
 </template>
 

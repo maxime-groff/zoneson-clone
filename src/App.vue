@@ -3,7 +3,7 @@
   <h1>
     Home page
   </h1>
-  <PlaySound fileName="sound.mp3"/>
+  <PlaySound file-name="sound.mp3" />
 </template>
 
 <script>
