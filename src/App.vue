@@ -1,24 +1,22 @@
 <template>
-  <Header msg="Nav goes here" />
-  <h1>
-    Home page
-  </h1>
-  <PlaySound file-name="sound.mp3" />
+  <div>
+    <!-- <component :is="layout"> -->
+    <router-view />
+    <!-- </component> -->
+  </div>
 </template>
-
 <script>
-import Header from './components/Header.vue'
-import PlaySound from './components/PlaySound.vue'
+
+// const default_layout = 'default'
 
 export default {
-  name: 'App',
-  components: {
-    Header,
-    PlaySound
-  }
+  // computed: {
+  //   layout() {
+  //     return (this.$route.meta.layout || default_layout) + '-layout'
+  //   },
+  // },
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
