@@ -7,6 +7,7 @@
         Go to Homepage
       </router-link>
       <PlaySound file-name="sound.mp3" />
+      {{ tagId }}
     </div>
   </div>
 </template>
@@ -20,6 +21,11 @@ export default {
   },
   data() {
     return {}
+  },
+  computed: {
+    tagId() {
+      return this.$route.params.id
+    },
   },
 }
 </script>
