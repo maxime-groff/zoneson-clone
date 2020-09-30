@@ -3,15 +3,18 @@
   <h1>
     Home page
   </h1>
+  <PlaySound fileName="sound.mp3"/>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import PlaySound from './components/PlaySound.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    PlaySound
   }
 }
 </script>
