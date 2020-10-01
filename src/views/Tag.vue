@@ -13,7 +13,7 @@
             class="bubble text-center"
           >
             <PlaySound file-name="sound.mp3" />
-            <a href="#">
+            <a href="/">
               <div
                 :id="tag"
                 class="close"
@@ -73,13 +73,6 @@ export default {
       type: String,
       default: 'quote'
     }
-  },
-  data() {
-    return {}
-  },
-  methods: {
-    toggle: function () {
-    } 
   }
 }
 </script>
