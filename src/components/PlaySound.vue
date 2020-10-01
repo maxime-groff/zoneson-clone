@@ -2,8 +2,9 @@
   <div class="playsound">
     <figure>
       <audio
-        controls
+        id="audioPlayer"
         autoplay
+        :onended="showStopped"
       >
         <source 
           :src="'/audio/' + fileName"
@@ -21,6 +22,11 @@ export default {
     fileName: {
       type: String,
       default: 'sound.mp3'
+    }
+  },
+  methods: {
+    showStopped: function() {
+      this.$emit('finished')
     }
   }
 };
