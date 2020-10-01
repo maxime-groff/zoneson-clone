@@ -2,7 +2,7 @@
   <div>
     <div>
       <!-- Components -->
-      <h1>Home page</h1>
+      <h1 class="title">Home page</h1>
       <div 
         v-for="(quote, index) in quotes" 
         :key="index"
