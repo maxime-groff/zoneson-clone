@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <!-- Navbar -->
+  <div>    
     <!-- Header -->
-    <div>
+    <div>      
       <Header msg="Nav goes here" />
     </div>
     <!-- Container -->
@@ -11,6 +10,7 @@
         <slot />
       </div>
     </div>
+    <!-- Footer -->
   </div>
 </template>
 

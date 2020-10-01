@@ -15,7 +15,7 @@
             <PlaySound file-name="sound.mp3" />
             <a href="/">
               <div
-                :id="tag"
+                :id="tagId"
                 class="close"
               >
                 <span class="fa fa-times" />
@@ -29,7 +29,7 @@
                 <span
                   id="tag"
                   class="replique-tag"
-                >{{ tag }}</span>
+                >{{ tagId }}</span>
               </div>
               <div class="quotes">
                 <div class="citation">
@@ -64,7 +64,8 @@ export default {
   name: 'Home',
   components: {
     PlaySound,
-  },props: {
+  },
+  props: {
     tag: {
       type: String,
       default: 'tag'
@@ -73,7 +74,15 @@ export default {
       type: String,
       default: 'quote'
     }
-  }
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    tagId() {
+      return this.$route.params.id
+    },
+  },
 }
 </script>
 
