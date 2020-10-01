@@ -26,7 +26,8 @@ $font-size: 16px;
     text-shadow: 0 1px 0 rgba(0,0,0,.5); 
 }
 
-.tag {
-    font-size: 2rem;
-    font-family: 'Lobster', cursive;   
+.tags {
+    font-family: 'Lobster', cursive;
+    display: inline-block;
+    padding: 1em;
 }
