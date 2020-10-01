@@ -1,8 +1,10 @@
 <template>
   <div class="playsound">
     <figure>
-      <figcaption>Listen to the Sound:</figcaption>
-      <audio controls>
+      <audio
+        controls
+        autoplay
+      >
         <source 
           :src="'/audio/' + fileName"
           type="audio/mpeg"
@@ -20,7 +22,7 @@ export default {
       type: String,
       default: 'sound.mp3'
     }
-  },
+  }
 };
 </script>
 
