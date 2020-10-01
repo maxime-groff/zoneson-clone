@@ -1,11 +1,10 @@
 <template>
   <div>
+    <h1 class="title">Home page</h1>
     <div>
       <!-- Components -->
-      <h1 class="title">
-        Home page
-      </h1>      
       <div 
+        class="tags"
         v-for="(quote, index) in quotes" 
         :key="index"
       >

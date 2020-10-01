@@ -1,1 +1,10 @@
 // global styles go here
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: grey;
+}
+
