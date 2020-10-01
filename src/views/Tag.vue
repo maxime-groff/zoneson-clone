@@ -14,7 +14,8 @@
           >
             <PlaySound
               file-name="sound.mp3"
-              @finished="finished"
+              @playing="playing"
+              @stopped="stopped"
             />
             <a href="/">
               <div
@@ -34,7 +35,7 @@
                   @click="toggle"
                 >
                   <div
-                    v-if="seen"
+                    v-if="listening"
                     id="btnIconStop"
                     ref="btnIconStop"
                     class="btnIcon fa fa-stop-circle"
@@ -97,7 +98,7 @@ export default {
   },
   data() {
     return {
-      seen: true
+      listening: true
     }
   },
   computed: {
@@ -111,17 +112,19 @@ export default {
       
       if (audio.paused) {
         audio.play()
-        this.seen = true
       }
       else {
         audio.pause();
-        this.seen = false
       }
     },
-    finished: function() {
-      this.seen = false
+    playing: function() {
+      this.listening = true
+
+    },
+    stopped: function() {
+      this.listening = false
     }
-  },
+  }
 }
 </script>
 

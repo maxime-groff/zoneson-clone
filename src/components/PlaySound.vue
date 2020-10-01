@@ -4,6 +4,8 @@
       <audio
         id="audioPlayer"
         autoplay
+        :onplay="showPlaying"
+        :onpause="showStopped"
         :onended="showStopped"
       >
         <source 
@@ -25,8 +27,11 @@ export default {
     }
   },
   methods: {
+    showPlaying: function() {
+      this.$emit('playing')
+    },
     showStopped: function() {
-      this.$emit('finished')
+      this.$emit('stopped')
     }
   }
 };
