@@ -1,16 +1,15 @@
 <template>
   <div>
+    <h1 class="title">Home page</h1>
     <div>
       <!-- Components -->
-      <h1 class="title">
-        Home page
-      </h1>
       <div 
+        class="tags"
         v-for="(quote, index) in quotes" 
         :key="index"
       >
-        <router-link :to="'/tag/'+ quote">
-          Go to Tag Page {{ quote }}
+        <router-link :to="'/tag/'+ quote">           
+          <RandomColor :quote-msg="quote" />
         </router-link>
       </div>
     </div>
@@ -18,8 +17,13 @@
 </template>
 
 <script>
+import RandomColor from "../components/RandomColor"
+
 export default {
   name: 'Home',
+  components:{
+    RandomColor
+  },
   data() {
     return {
       quotes: ['cheveux', 'gentil', 'facteur', 'bordel'],
