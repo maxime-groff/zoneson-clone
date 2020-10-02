@@ -1,19 +1,26 @@
 <template>
   <div class="header">
-    <h1>{{ msg }}</h1>
+    <router-link to="/">
+      <h1 class="title">{{ title }}</h1>
+    </router-link>
+    <p class="big">{{ subtitle }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   props: {
-    msg: {
-      type: String, 
-      default: 'yes life'
-    }
+    title: {
+      type: String,
+      default: 'Home page',
+    },
+    subtitle: {
+      type: String,
+      default: '',
+    },
   },
-};
+}
 </script>
 
 <style scoped>
