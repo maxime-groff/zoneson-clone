@@ -4,8 +4,15 @@
       <!-- Components -->
       <div id="player">
         <div id="player-content">
-          <div id="bubble" style="background-color" class="bubble text-center">
-            <PlaySound file-name="sound.mp3"/>
+          <div
+            id="bubble"
+            class="bubble text-center"
+          >
+            <PlaySound
+              file-name="sound.mp3"
+              @playing="playing"
+              @stopped="stopped"
+            />
             <a href="/">
               <div :id="tagId" class="close">
                 <span class="fa fa-times"/>
@@ -13,7 +20,27 @@
             </a>
             <div id="bubble-main" class="replique-content">
               <div id="title">
-                <span id="tag" class="replique-tag">{{ tagId }}</span>                
+                <div
+                  id="btnAudio"
+                  @click="toggle"
+                >
+                  <div
+                    v-if="listening"
+                    id="btnIconStop"
+                    ref="btnIconStop"
+                    class="btnIcon fa fa-stop-circle"
+                  />
+                  <div
+                    v-else
+                    id="btnIconPlay"
+                    ref="btnIconPlay"
+                    class="btnIcon fa fa-play-circle"
+                  />
+                </div>
+                <span
+                  id="tag"
+                  class="replique-tag"
+                >{{ tagId }}</span>
               </div>
 
               <div class="quotes">
@@ -54,6 +81,7 @@ export default {
   data() {
     return {
       quotes: ['cheveux', 'gentil', 'facteur', 'bordel'],
+      listening: true
     }
   },
   computed: {
@@ -67,6 +95,25 @@ export default {
   mounted() {    
     console.log(this.$route.params)
   },
+  methods: {
+    toggle: function () {
+      var audio = document.getElementById('audioPlayer');
+      
+      if (audio.paused) {
+        audio.play()
+      }
+      else {
+        audio.pause();
+      }
+    },
+    playing: function() {
+      this.listening = true
+
+    },
+    stopped: function() {
+      this.listening = false
+    }
+  }
 }
 </script>
 
