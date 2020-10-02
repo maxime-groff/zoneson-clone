@@ -1,10 +1,18 @@
 // global styles go here
+
+body {
+    margin: 0;
+    padding: 0;
+ }
+
 a {
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    background-color: grey;
+    text-decoration: none;
+    // text-decoration: underline;
+    // text-decoration-color: black;
+    // background-color: grey;
 }
 

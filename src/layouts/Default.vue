@@ -2,7 +2,9 @@
   <div>    
     <!-- Header -->
     <div>      
-      <Header msg="Nav goes here" />
+      <Header 
+        title="OUICHES" 
+        subtitle="Les répliques les plus classes du monde" />
     </div>
     <!-- Container -->
     <div>

@@ -1,8 +1,8 @@
 <template>
-  <div>    
-    <span :style="'color:' + color "> 
-      {{ quoteMsg }} 
-    </span>
+  <div>
+    <router-link :to="'/tag/'+ quoteMsg">
+      <span :style="'color:' + quoteColor ">{{ quoteMsg }}</span>
+    </router-link>        
   </div>
 </template>
 
@@ -12,15 +12,13 @@ export default {
   props: {
     quoteMsg: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
-  data() {
-    return {}
-  },
+
   computed: {
-    color() {
-      return ('#' + ((Math.random() * 0xffffff) << 0).toString(16))
+    quoteColor() {
+      return '#' + ((Math.random() * 0xffffff) << 0).toString(16)
     },
   },
 }
