@@ -9,7 +9,7 @@
         :onended="showStopped"
       >
         <source 
-          :src="'/audio/' + fileName"
+          :src="fileName"
           type="audio/mpeg"
         >
       </audio>

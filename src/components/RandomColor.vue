@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link :to="'/tag/'+ quoteMsg">
-      <span :style="'color:' + quoteColor ">{{ quoteMsg }}</span>
+      <span :style="'color:' + quoteColor ">#{{ quoteMsg }}</span>
     </router-link>        
   </div>
 </template>
