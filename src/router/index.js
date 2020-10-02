@@ -13,11 +13,11 @@ const routes = [
   }, 
   {
     path: "/tag/:id",
-    name: "Tag",
+    name: "Tag",    
     meta: {
       title: "Tag page"
     },
-    component: Tag,
+    component: Tag,    
   }
 ];
 
