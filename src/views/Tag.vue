@@ -12,7 +12,11 @@
             id="bubble"
             class="bubble text-center"
           >
-            <PlaySound file-name="sound.mp3" />
+            <PlaySound
+              file-name="sound.mp3"
+              @playing="playing"
+              @stopped="stopped"
+            />
             <a href="/">
               <div
                 :id="tagId"
@@ -26,6 +30,23 @@
               class="replique-content"
             >
               <div id="title">
+                <div
+                  id="btnAudio"
+                  @click="toggle"
+                >
+                  <div
+                    v-if="listening"
+                    id="btnIconStop"
+                    ref="btnIconStop"
+                    class="btnIcon fa fa-stop-circle"
+                  />
+                  <div
+                    v-else
+                    id="btnIconPlay"
+                    ref="btnIconPlay"
+                    class="btnIcon fa fa-play-circle"
+                  />
+                </div>
                 <span
                   id="tag"
                   class="replique-tag"
@@ -76,13 +97,34 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      listening: true
+    }
   },
   computed: {
     tagId() {
       return this.$route.params.id
     },
   },
+  methods: {
+    toggle: function () {
+      var audio = document.getElementById('audioPlayer');
+      
+      if (audio.paused) {
+        audio.play()
+      }
+      else {
+        audio.pause();
+      }
+    },
+    playing: function() {
+      this.listening = true
+
+    },
+    stopped: function() {
+      this.listening = false
+    }
+  }
 }
 </script>
 
@@ -142,5 +184,15 @@ export default {
 }
 .playsound {
   display: inline-block;
+}
+#btnAudio {
+    width: 64px;
+    height: 64px;
+    color: rgba(255,255,255,.66);
+}
+.btnIcon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
 }
 </style>
